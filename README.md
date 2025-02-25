@@ -1,123 +1,124 @@
-# tameronline-agent
+# ollamalocal
 
-## Overview
-`tameronline-agent` is a lightweight and automated environment setup script designed to streamline the process of creating and activating a virtual environment across different operating systems (Windows, Linux, and macOS). This project ensures that Python dependencies are properly managed and integrated with your development workflow.
+## 🚀 Overview
+`ollamalocal` is a lightweight and automated environment setup script designed to streamline the process of creating and activating a virtual environment across different operating systems (**Windows, Linux, and macOS**). This project ensures that Python dependencies are properly managed and integrated with your development workflow. It also includes **LangChain Ollama** support to interact with AI models seamlessly.
 
-## Features
+## ✨ Features
 - **Cross-Platform Support**: Works seamlessly on Windows (`.bat`, `.ps1`), Linux (`.sh`), and macOS (`.sh`).
 - **Automated Virtual Environment Setup**: Detects Python installation, creates a virtual environment, and activates it.
 - **Pip Package Management**: Ensures the latest version of pip and installs dependencies from `requirements.txt`.
 - **Integrated with VS Code**: Provides a `.code-workspace` file for one-click environment activation in Visual Studio Code.
+- **Supports LangChain Ollama**: Easily interact with the `mistral` model for AI-driven responses.
 
-## Installation
-### Prerequisites
-- **Python 3.6+** must be installed.
-- **VS Code (optional)** for an integrated development experience.
+---
 
-### Setup Instructions
-#### Windows
-**Using Command Prompt:**
-```cmd
-cd path/to/tameronline-agent
-activate_project.bat
-```
-**Using PowerShell:**
-```powershell
-cd path/to/tameronline-agent
-.\activate_project.ps1
-```
+## 📥 Installation
 
-#### Linux/macOS
-```bash
-cd path/to/tameronline-agent
-chmod +x activate_project.sh
-./activate_project.sh
-```
+### 🛠 Prerequisites
+- **Python 3.6+** (Check installation using: `python --version`)
+- **Git** (Optional) for cloning the project
+- **VS Code** (Optional) for an enhanced development experience
 
-## Cloning the Project
-To clone the `tameronline-agent` repository to your local machine, follow these steps:
+### 🔧 Setup Instructions
 
-### **1. Ensure Git is Installed**
-Check if Git is installed by running:
-```bash
-git --version
-```
-If not installed, download and install it from [Git Official Website](https://git-scm.com/).
+#### **Windows**
+1. **Using Command Prompt:**
+   ```cmd
+   cd path/to/ollamalocal
+   activate_project.bat
+   ```
+2. **Using PowerShell:**
+   ```powershell
+   cd path/to/ollamalocal
+   .\activate_project.ps1
+   ```
 
-### **2. Clone the Repository**
-Open a terminal or command prompt and execute:
-```bash
-git clone https://github.com/TamerOnLine/tameronline-agent.git
-```
-For SSH access:
-```bash
-git clone git@github.com:TamerOnLine/tameronline-agent.git
-```
-
-### **3. Navigate into the Project Directory**
-```bash
-cd tameronline-agent
-```
-
-### **4. Setup the Virtual Environment**
-#### **Windows (Command Prompt)**
-```cmd
-activate_project.bat
-```
-#### **Windows (PowerShell)**
-```powershell
-.\activate_project.ps1
-```
 #### **Linux/macOS**
-```bash
-chmod +x activate_project.sh
-./activate_project.sh
+1. Grant execution permission:
+   ```bash
+   cd path/to/ollamalocal
+   chmod +x activate_project.sh
+   ```
+2. Run the script:
+   ```bash
+   ./activate_project.sh
+   ```
+
+---
+
+## 📂 Project Structure
+```
+ollamalocal/
+├── README.md                # Documentation
+├── LICENSE                  # License file
+├── activate_project.bat     # Windows CMD script
+├── activate_project.ps1     # Windows PowerShell script
+├── activate_project.sh      # Linux/macOS Bash script
+├── requirements.txt         # List of dependencies
+├── workspace.code-workspace # VS Code workspace configuration
+├── src/
+│   ├── __init__.py
+│   └── main.py              # Main script for interacting with Ollama LLM
+├── tests/
+│   ├── __init__.py
+│   └── test_example.py      # Basic test case
+└── .github/
+    └── workflows/
+        └── main.yml         # CI/CD workflow for testing the virtual environment
 ```
 
-### **5. Install Dependencies**
+---
+
+## 🚀 Usage
+
+### ✅ **Activate the Virtual Environment**
+After running the setup script for your OS, the virtual environment will be activated automatically. You can confirm this by checking your terminal prompt:
+```bash
+(venv) user@machine:~/ollamalocal$
+```
+
+### 📦 **Install Dependencies**
 After activating the virtual environment, install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## File Structure
-```
-tameronline-agent/
-├── README.md                # Documentation
-├── activate_project.bat     # Windows CMD script
-├── activate_project.ps1     # Windows PowerShell script
-├── activate_project.sh      # Linux/macOS Bash script
-├── requirements.txt         # List of dependencies
-└── workspace.code-workspace # VS Code workspace file
-```
-
-## Usage
-### Activating the Virtual Environment
-After running the respective script for your OS, your terminal will enter the virtual environment. You can confirm this by checking your prompt:
+### 📝 **Run LangChain Ollama Script**
 ```bash
-(venv) user@machine:~/tameronline-agent$
+python src/main.py
 ```
+You will be prompted to enter a question, and the `mistral` model will provide a response.
 
-### Installing Dependencies
-Once the virtual environment is active, install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-### Deactivating the Virtual Environment
-To exit the virtual environment, simply run:
+### ❌ **Deactivate the Virtual Environment**
 ```bash
 deactivate
 ```
 
-## Troubleshooting
-- **Python Not Found Error**: Ensure Python 3.6+ is installed and available in the system path.
-- **Virtual Environment Activation Fails**: Delete the `venv` folder and rerun the activation script.
-- **Permission Issues on macOS/Linux**: Run `chmod +x activate_project.sh` to grant execution permissions.
+---
 
-## Contribution
-Feel free to submit pull requests or report issues on the [GitHub repository](https://github.com/TamerOnLine/tameronline-agent).
+## 🔄 **Troubleshooting**
+| Issue | Solution |
+|-------|---------|
+| **Python Not Installed** | Ensure Python is installed and added to `PATH`. |
+| **Virtual Environment Creation Failed** | Delete the `venv` folder and rerun the activation script. |
+| **Permission Issues on macOS/Linux** | Run `chmod +x activate_project.sh` before executing the script. |
 
-## License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+---
 
+## 🤝 Contributing
+Contributions are welcome! Feel free to submit **Pull Requests** or open **Issues** on the [GitHub repository](https://github.com/TamerOnLine/ollamalocal).
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+### 🔗 **Useful Links**
+- [GitHub Repository](https://github.com/TamerOnLine/ollamalocal)
+- [LangChain Ollama](https://python.langchain.com/docs/integrations/llms/ollama)
+
+---
+
+If you need any modifications, let me know! 🚀
